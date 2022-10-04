@@ -23,30 +23,24 @@ module.exports = () => {
 				title: "Webpack Plugin",
 			}),
 			new InjectManifest({
-				swSrc: "./src-sw.js",
-				swDest: "service-worker.js",
+				swSrc: "./src/sw.js",
+				swDest: "sw.js",
 			}),
 			new WebpackPwaManifest({
+				inject: false,
+				fingerprints: false,
 				publicPath: "/",
 				name: "Just Another Text Editor",
 				short_name: "JATE",
 				description: "Jate progressive web app!",
 				background_color: "#ffffff",
 				start_url: "./",
-				crossorigin: null, //can be null, use-credentials or anonymous
+				crossorigin: "use-credentials", //can be null, use-credentials or anonymous
 				icons: [
 					{
 						src: path.resolve("src/images/logo.png"),
 						sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
-					},
-					{
-						src: path.resolve("src/images/logo.png"),
-						size: "1024x1024", // you can also use the specifications pattern
-					},
-					{
-						src: path.resolve("src/images/logo.png"),
-						size: "1024x1024",
-						purpose: "maskable",
+						destination: path.join("assets", "icons"),
 					},
 				],
 			}),
