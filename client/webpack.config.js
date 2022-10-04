@@ -23,13 +23,13 @@ module.exports = () => {
 				title: "Webpack Plugin",
 			}),
 			new InjectManifest({
-				swSrc: "./src/sw.js",
-				swDest: "sw.js",
+				swSrc: "./src-sw.js",
+				swDest: "src-sw.js",
 			}),
 			new WebpackPwaManifest({
 				inject: false,
 				fingerprints: false,
-				publicPath: "/",
+				publicPath: "./",
 				name: "Just Another Text Editor",
 				short_name: "JATE",
 				description: "Jate progressive web app!",

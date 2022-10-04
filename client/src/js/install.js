@@ -4,10 +4,14 @@ const butInstall = document.getElementById("buttonInstall");
 // TODO: Add an event handler to the `beforeinstallprompt` event
 window.addEventListener("beforeinstallprompt", (event) => {
 	event.preventDefault();
-	console.log("IN install");
 	butInstall.style.visibility = "visible";
 
-	butInstall.addEventListener("click", () => {
+	butInstall.addEventListener("click", async () => {
+		const promptEvent = window.deferredPrompt;
+
+		if (!promptEvent) {
+			return;
+		}
 		event.prompt();
 		butInstall.setAttribute("disabled", true);
 		butInstall.textContent = "Installed";
