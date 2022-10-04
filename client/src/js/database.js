@@ -13,11 +13,11 @@ const initdb = async () =>
 	});
 
 export const putDb = async (content) => {
-	console.log("POST to Database");
+	console.log("Updated to Database");
 	const jateDb = await openDB("jate", 1);
 	const tx = jateDb.transaction("jate", "readwrite");
 	const store = tx.objectStore("jate");
-	const request = store.add({ jate: content });
+	const request = store.put({ id: 1, jate: content });
 	const result = await request;
 	console.log("Data saved to Database", result);
 };

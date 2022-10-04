@@ -29,7 +29,7 @@ module.exports = () => {
 			new WebpackPwaManifest({
 				name: "Just Another Text Editor",
 				short_name: "JATE",
-				description: "Jate progressive web app",
+				description: "Jate progressive web app!",
 				background_color: "#ffffff",
 				crossorigin: "use-credentials", //can be null, use-credentials or anonymous
 				icons: [
@@ -38,14 +38,14 @@ module.exports = () => {
 						sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
 					},
 					// {
-					//   src: path.resolve('src/assets/large-icon.png'),
-					//   size: '1024x1024' // you can also use the specifications pattern
+					// 	src: path.resolve("src/assets/large-icon.png"),
+					// 	size: "1024x1024", // you can also use the specifications pattern
 					// },
 					// {
-					//   src: path.resolve('src/assets/maskable-icon.png'),
-					//   size: '1024x1024',
-					//   purpose: 'maskable'
-					// }
+					// 	src: path.resolve("src/assets/maskable-icon.png"),
+					// 	size: "1024x1024",
+					// 	purpose: "maskable",
+					// },
 				],
 			}),
 		],
