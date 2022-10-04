@@ -6,6 +6,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
 	window.deferredPrompt = event;
 	butInstall.style.visibility = "visible";
 });
+
 butInstall.addEventListener("click", async () => {
 	const promptEvent = window.deferredPrompt;
 
