@@ -27,25 +27,27 @@ module.exports = () => {
 				swDest: "service-worker.js",
 			}),
 			new WebpackPwaManifest({
+				publicPath: "/",
 				name: "Just Another Text Editor",
 				short_name: "JATE",
 				description: "Jate progressive web app!",
 				background_color: "#ffffff",
-				crossorigin: "use-credentials", //can be null, use-credentials or anonymous
+				start_url: "./",
+				crossorigin: null, //can be null, use-credentials or anonymous
 				icons: [
 					{
 						src: path.resolve("src/images/logo.png"),
 						sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
 					},
-					// {
-					// 	src: path.resolve("src/assets/large-icon.png"),
-					// 	size: "1024x1024", // you can also use the specifications pattern
-					// },
-					// {
-					// 	src: path.resolve("src/assets/maskable-icon.png"),
-					// 	size: "1024x1024",
-					// 	purpose: "maskable",
-					// },
+					{
+						src: path.resolve("src/images/logo.png"),
+						size: "1024x1024", // you can also use the specifications pattern
+					},
+					{
+						src: path.resolve("src/images/logo.png"),
+						size: "1024x1024",
+						purpose: "maskable",
+					},
 				],
 			}),
 		],

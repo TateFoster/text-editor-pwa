@@ -12,7 +12,7 @@ const initdb = async () =>
 		},
 	});
 
-export const putDb = async (content) => {
+export const putDb = async (id, content) => {
 	console.log("Updated to Database");
 	const jateDb = await openDB("jate", 1);
 	const tx = jateDb.transaction("jate", "readwrite");
