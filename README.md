@@ -24,6 +24,10 @@
 
 This is a progressive web application that allows you to write text into a console style text page. It saves the data on an online database as well as allowing the user to download the apllication to their device.
 
+[JATE Webpage](https://stark-springs-79249.herokuapp.com/)
+
+![JATE Screenshot](JATE.png)
+
 ## Usage
 
 ---
